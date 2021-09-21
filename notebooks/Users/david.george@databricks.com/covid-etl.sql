@@ -30,7 +30,7 @@ CREATE LIVE TABLE covid_clean(
   CONSTRAINT valid_date EXPECT (date IS NOT NULL),
   CONSTRAINT valid_reporting EXPECT (cases >= 0) ON VIOLATION FAIL UPDATE
 )
-COMMENT "Covid dataset with cleaned-up datatypes / column names and quality expectations."
+COMMENT "Covid dataset with cleaned-up datatypes / column names and data quality expectations."
 TBLPROPERTIES ("quality" = "silver")
 AS SELECT
   CAST (date AS DATE) AS date,
